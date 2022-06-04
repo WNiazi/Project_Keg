@@ -15,7 +15,7 @@ class KegControl extends React.Component {
       selectedKeg: null,
       editing: false,
      //amountLeftInKeg:0
-     decrease:true
+     //decrease:true
      //increase: true
     };
   }
@@ -73,26 +73,26 @@ class KegControl extends React.Component {
   }
 
 
-handlingDecreasingPintsClick = () => {
-  this.setState({
-    decrease :true
-  }); 
-} 
-handleDecreasingPints=(pintToEdit)=>{
-  const editedMainKegList = this.state.mainKegList.filter(keg => keg.id !== this.state.selectedKeg.id).concat(pintToEdit);
-  if(pintToEdit.amountLeftInKeg===0){
-    this.setState({
-      mainKegList: editedMainKegList,
-      editing:false, 
-      selectedKeg: null});
-    }
-    pintToEdit.amountLeftInKeg -- ; 
-    this.setState({
-    mainKegList: editedMainKegList,
-    editing:false, 
-    selectedKeg: null
-  });
-}
+// handlingDecreasingPintsClick = () => {
+//   this.setState({
+//     decrease :true
+//   }); 
+// } 
+// handleDecreasingPints=(pintToEdit)=>{
+//   const editedMainKegList = this.state.mainKegList.filter(keg => keg.id !== this.state.selectedKeg.id).concat(pintToEdit);
+//   if(pintToEdit.amountLeftInKeg===0){
+//     this.setState({
+//       mainKegList: editedMainKegList,
+//       editing:false, 
+//       selectedKeg: null});
+//     }
+//     pintToEdit.amountLeftInKeg -- ; 
+//     this.setState({
+//     mainKegList: editedMainKegList,
+//     editing:false, 
+//     selectedKeg: null
+//   });
+//}
 
 
 
@@ -157,35 +157,33 @@ handleDecreasingPints=(pintToEdit)=>{
 // this.setStatet({...this.state.selectedKeg, amountLeftInKeg: amountAvailable}
 
 // // Descreasing Pints
-// handleDecreasingPints = (id) => {
-//   const selectedKeg = this.state.mainKegList.filter(keg => keg.id === id)[0]
-//   {
-//     selectedKeg.amountLeftInKeg--;
-//     const newMainKegList = this.state.mainKegList.filter(keg => keg.id !==id).concat(selectedKeg);
-//     this.setState
-//     ({
-//       mainKegList:newMainKegList
-//     });
-//   } 
-// }
-// //Increasing Kegs
-// handleIncreasingKegs = (id) => { 
-//   const selectedKeg = this.state.mainKegList.filter(keg => keg.id === id)[0]
-//   {
-//     selectedKeg.amountOfKeg++;
-//     const newMainKegList = this.state.mainKegList.filter(keg => keg.id !==id).concat(selectedKeg);
-//     this.setState
-//     ({
-//       mainKegList:newMainKegList
-//      });
-//   } 
-//}
+handleDecreasingPints = (id) => {
+  const selectedKeg = this.state.mainKegList.filter(keg => keg.id === id)[0]
+    if (selectedKeg.amountLeftInKeg >0) {
+      selectedKeg.amountLeftInKeg--;
+      const newMainKegList = this.state.mainKegList.filter(keg => keg.id !==id).concat(selectedKeg);
+      this.setState
+      ({
+        mainKegList:newMainKegList
+      });
+  }
+}
+//Increasing Kegs
+handleIncreasingKegs = (id) => { 
+  const selectedKeg = this.state.mainKegList.filter(keg => keg.id === id)[0]  
+  selectedKeg.amountOfKeg++;
+    const newMainKegList = this.state.mainKegList.filter(keg => keg.id !==id).concat(selectedKeg);
+    this.setState
+    ({
+      mainKegList:newMainKegList
+     }); 
+}
 
 //using spread to change values 
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
-    
+
     if (this.state.editing) {
       currentlyVisibleState = <EditKegForm keg = {this.state.selectedKeg} onEditKeg = {this.handleEditingKegInList}/>
       buttonText = "Return to Keg List";
