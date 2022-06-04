@@ -13,6 +13,7 @@ function EditKegForm(props) {
       alcoholContent: parseInt(event.target.alcoholContent.value), 
       amountLeftInKeg: parseInt(event.target.amountLeftInKeg.value), 
       priceOfKeg: parseInt(event.target.priceOfKeg.value), 
+      amountOfKeg: parseInt(event.target.amountOfKeg.value),
       id: keg.id
     });
   }

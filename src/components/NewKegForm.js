@@ -12,6 +12,7 @@ function NewKegForm(props) {
       alcoholContent: parseInt(event.target.alcoholContent.value), 
       amountLeftInKeg: parseInt(event.target.amountLeftInKeg.value), 
       priceOfKeg: parseInt(event.target.priceOfKeg.value), 
+      amountOfKeg: parseInt(event.target.amountOfKeg.value), 
       id: v4()});
   }
 
@@ -19,7 +20,7 @@ function NewKegForm(props) {
     <React.Fragment>
         <ReusableForm 
           formSubmissionHandler={handleNewKegFormSubmission}
-          buttonText='Add Keg' />
+          buttonText='Add New Keg' />
     </React.Fragment>
   )
 }
