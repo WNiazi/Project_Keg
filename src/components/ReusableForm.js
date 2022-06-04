@@ -8,7 +8,7 @@ function ReusableForm(props) {
         <input
           type="text"
           name="brand"
-          placeholder="Name" />
+          placeholder="Company/Brand" />
         <input
           type="text"
           name="name"
@@ -36,3 +36,6 @@ ReusableForm.propTypes = {
   formSubmissionHandler: PropTypes.func,
   buttonText: PropTypes.string,
 }; 
+
+
+export default ReusableForm;

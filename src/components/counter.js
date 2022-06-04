@@ -1,53 +1,44 @@
-// // import React, { useState } from "react";
+// import React, { useState } from "react";
 
-// // function Counter() {
-// //   // Set the initial count state to zero, 0
-// //   const [count, setCount] = useState(0);
-
-// //   // Create handleIncrement event handler
-// //   const handleIncrement = () => {
-// //     setCount(prevCount => prevCount + 1);
-// //   };
-
-// //   //Create handleDecrement event handler
-// //   const handleDecrement = () => {
-// //     setCount(prevCount => prevCount - 1);
-// //   };
-// //   return (
-// //     <div>
-// //       <div>
-// //         <button onClick={handleDecrement}>-</button>
-// //         <h5>Count is {count}</h5>
-// //         <button onClick={handleIncrement}>+</button>
-// //       </div>
-// //       <button onClick={() => setCount(0)}>Reset</button>
-// //     </div>
-// //   );
-// // }
-
-// // export default Counter;
+// function amountLeftInKeg() {
+//   const [amountLeftinKeg, setCount] = useState(0);
+//   const handleDecrement = () => { 
+//   if (amountLeftInKeg > 0)
+//   setCount(amountLeftInKeg => amountLeftInKeg - 1);
+//  };
+//   return (
+//     <div> <h1 className={amountLeftInKeg > 0 ? "positive" : amountLeftInKeg < 0 ? "negative" : null}>{amountLeftInKeg}</h1>
+//       <div>
+//         <button onClick={handleDecrement}>Sell a Pint</button>
+//         <h5>Count is {amountLeftInKeg}</h5>
+//       </div>
+//       <button onClick={() => setCount(0)}>Reset</button>
+//     </div>
+//   );
+// }
+//  export default Counter;
 
 
-// // const { useState } = React;
+// const { useState } = React;
 
-// // function App() {
-// //   const [count, setCount] = useState(0);
+// function App() {
+//   const [count, setCount] = useState(0);
 
-// //   return (
-// //     <div className="app">
-// //       {
-// //         // if else statement to determine color of the counter
-// //       }
-// //       <h1 className={count > 0 ? "positive" : count < 0 ? "negative" : null}>
-// //         {count}
-// //       </h1>
-// //       <div className="button__wrapper">
-// //         <button onClick={() => setCount(count - 1)}>-</button>
-// //         <button onClick={() => setCount(count + 1)}>+</button>
-// //       </div>
-// //     </div>
-// //   );
-// // }
+//   return (
+//     <div className="app">
+//       {
+//         // if else statement to determine color of the counter
+//       }
+//       <h1 className={count > 0 ? "positive" : count < 0 ? "negative" : null}>
+//         {count}
+//       </h1>
+//       <div className="button__wrapper">
+//         <button onClick={() => setCount(count - 1)}>-</button>
+//         <button onClick={() => setCount(count + 1)}>+</button>
+//       </div>
+//     </div>
+//   );
+// }
 
 // // ReactDOM.render(<App />, document.getElementById("root"));
 // /*   color variables */

@@ -45,15 +45,16 @@ As a user, I want this application to be nicely styled. (Use stylesheets and CSS
 - JavaScript/JSX
 - NPM
 - Node.js
+  \_Bootstrap: npm install react-bootstrap bootstrap
 
 ## Project Setup/Installation Instructions <a id="setup"></a>
 
 - Navigate to the directory in which you would like to clone this project.
-- Run `git clone https://github.com/wajmaniazi/Project_Keg.git` in terminal.
+- Put `git clone https://github.com/wajmaniazi/Project_Keg.git` in terminal.
 - Run `cd Project_Keg` to navigate into new project directory.
 - Open the cloned repo in a text editor of your choice.
 - Run `npm install` to download all dependencies.
-- Run `npm run start` to start a live server and view projec in the browser.
+- Run `npm run start` to start a live server.
 
 ## Known Bugs <a id="bugs"></a>
 
