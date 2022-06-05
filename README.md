@@ -33,6 +33,7 @@ Build a tap room in React the store can track their kegs. Provide CRUD functiona
 ## Website Components Planning
 
 <img src="./img/flow_chart.jpg">
+![this image](../img/flow_chart.jpg)
 
 ## Technologies Used <a id="technologies"></a>
 
