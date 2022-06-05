@@ -33,7 +33,6 @@ Build a tap room in React the store can track their kegs. Provide CRUD functiona
 ## Website Components Planning
 
 <img src="./img/flow_chart.jpg">
-![this image](../img/flow_chart.jpg)
 
 ## Technologies Used <a id="technologies"></a>
 
@@ -56,7 +55,7 @@ Build a tap room in React the store can track their kegs. Provide CRUD functiona
 
 ## Known Bugs <a id="bugs"></a>
 
-- _Having issues with One Keg and its' conversion to 124 pints. _
+- _Having issues with One Keg and its' conversion to 124 pints. Also image loading._
 
 ## Contact <a id="contact"></a>
 
