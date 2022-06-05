@@ -17,12 +17,14 @@ function KegDetail(props) {
           <h4 class="card-title"> Name: {keg.name}</h4>
           <p class="card-text">
             <p>Alcohol Content %: {keg.alcoholContent}</p>
-            <p>Price per Keg: ${keg.priceOfKeg}</p>
-             <p>Amount of Kegs: {keg.amountOfKeg} </p>
-            {/* <p>Amount Left in all Keg: {newAmountLeftInKeg }</p>  */}
+            { keg.priceOfKeg < 400 ? <p style={{color: 'green'}}>Price per Keg: ${keg.priceOfKeg}</p>: <p>Price per Keg: ${keg.priceByKeg}</p>}
+            { keg.priceOfKeg > 400 ? <p style={{color: 'red'}}>Price per Keg: ${keg.priceOfKeg}</p>: <p>Price per Keg: ${keg.priceByKeg}</p>}
 
-            {keg.amountLeftInKeg===0 && keg.amountOfKeg ===0?  <button className="btn btn-danger">All Done</button> : <p>Amount Left in Open Keg: {keg.amountLeftInKeg}</p>}
+            <p>Amount of Kegs: {keg.amountOfKeg} </p>
+
+            {keg.amountLeftInKeg===0 && keg.amountOfKeg ===0?  <button className="btn btn-danger">Out of Stock</button> : <p>Amount Left in Keg: {keg.amountLeftInKeg}</p>}
             {keg.amountLeftInKeg > 0 && keg.amountLeftInKeg <= 10 ? <button className="btn btn-warning">Almost Done</button> : null}
+          
 
           </p> 
         </div> 
@@ -62,26 +64,3 @@ export default KegDetail;
 //   }
 // }
 // <a href="#" onClick={() => { func1(); func2();}}>Test Link</a>
-
-  // const [buttonText, setButtonText] = useState('Buy a Pint');
-  // handleDrink() {
-  //   if (keg.amountLeftInKeg <10 ){ 
-  //     setButtonText('Almost done');
-  //   }else if (keg.amountLeftInKeg === 0){ 
-  //     setButtonText('All Done');
-  //   }
-  //    (keg.amountLeftInKeg >10)
-  //     setButtonText('Keep Drinking');
-  // //   }
-  //       {/* <button onClick={() => {onClickingDecreasingPints(keg.id); {handleDrink};}}>{buttonText}</button> */}
-
-
-  // {keg.pintsLeft === 0 ?
-  //   <h3>Out of stock! Better luck next time.</h3>
-  //   : <h3>Pints Remaining: {keg.pintsLeft}</h3>}
-  //   {keg.pintsLeft > 0 && keg.pintsLeft <= 10
-  //   ? <h4><em>Almost Empty - get 'em while they're cold!</em></h4>
-  //   : null}
-  //   { keg.pintsLeft > 0
-  //   ? <button onClick={props.onClickingBuy} className="btn btn-success">Buy Pint</button>
-  //   : <button onClick={props.onClickingRestock} className="btn btn-info">Restock Large Keg</button>}

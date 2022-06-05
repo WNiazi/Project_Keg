@@ -130,3 +130,104 @@
 //     transform: scale(1.2);
 //   }
 // }
+
+
+// handlingDecreasingPintsClick = () => {
+//   this.setState({
+//     decrease :true
+//   }); 
+// } 
+// handleDecreasingPints=(pintToEdit)=>{
+//   const editedMainKegList = this.state.mainKegList.filter(keg => keg.id !== this.state.selectedKeg.id).concat(pintToEdit);
+//   if(pintToEdit.amountLeftInKeg===0){
+//     this.setState({
+//       mainKegList: editedMainKegList,
+//       editing:false, 
+//       selectedKeg: null});
+//     }
+//     pintToEdit.amountLeftInKeg -- ; 
+//     this.setState({
+//     mainKegList: editedMainKegList,
+//     editing:false, 
+//     selectedKeg: null
+//   });
+//}
+
+
+
+
+//Details/Selling Pints
+  // handleDecreasingPints = (id) => {
+  //   const selectedKeg = this.state.mainKegList.filter(keg => keg.id === id)[0] 
+  //     const amountAvailable=selectedKeg.amountLeftInKeg;
+  //      if (amountAvailable ===0){ 
+  //           this.setState({
+  //             amountAvailable: 0 
+  //           }); 
+  //         }else { 
+  //           this.setState ({
+  //             amountAvailable: selectedKeg.amountLeftInKeg -1
+  //           });
+  //         }
+  //       }
+
+  // handleDecreasingPints = (id) => {
+   // const amountAvailable=selectedKeg.amountLeftInKeg-1;
+  //     //have to put into a the array 
+  //      const newMainKegList = this.state.mainKegList.filter(keg => keg.id !==this.state.selectedKeg.id).concat(selectedKeg);
+  //      console.log(newMainKegList); 
+  //      this.setState
+  //      ({
+  //        mainKegList: newMainKegList,
+  //        amountLeftInKeg : selectedKeg.amountLeftInKeg-1,
+  //        editing: true, 
+  //        selectedKeg: selectedKeg
+  //       });
+  //   }
+  // }
+
+
+  // handleDecreasingPints =(id)=> { 
+  //   const selectedKeg=this.state.mainKegList.filter(keg => keg.id === id)[0]
+  //   // const amountAvailable =selectedKeg.amountLeftInKeg -1; 
+  //   console.log(selectedKeg);
+
+  //   this.setState (prevState=> ({ 
+  //       selectedKeg: { 
+  //       ...prevState.selectedKeg, 
+  //       amountLeftInKeg: selectedKeg.amountLeftInKeg-1
+  //     }
+  //   }))
+  //   console.log(selectedKeg);
+  //   console.log(selectedKeg.amountLeftInKeg);
+  // }
+  
+  // handleDecreasingPints =(id)=> { 
+  //   const selectedKeg=this.state.mainKegList.filter(keg => keg.id === id)[0] 
+  //   this.setState (prevState=> ({ 
+  //     mainKegList: prevState.mainKegList.map(
+  //       el=>el.key===key? {...el, amountLeftInKeg: amountLeftInKeg-1}: el
+  //     )
+  //   }))
+  // }
+
+
+// this.setStatet({...this.state.selectedKeg, amountLeftInKeg: amountAvailable}
+
+
+
+
+  // {/* <h1 className ={keg.amountLeftInKeg < 10 ? "positive": keg.amountLeftInKeg >10 ? "negative" : null} }>{keg.amountLeftInKeg} </h1> */}
+
+// class Test extends React.Component {
+//   onClick(event) {
+//      func1();
+//      func2();
+//   }
+//   render() {
+//      return (
+//         <a href="#" onClick={this.onClick}>Test Link</a>
+//      );
+//   }
+// }
+// <a href="#" onClick={() => { func1(); func2();}}>Test Link</a>

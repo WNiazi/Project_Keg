@@ -14,9 +14,6 @@ class KegControl extends React.Component {
       mainKegList: [],
       selectedKeg: null,
       editing: false,
-     //amountLeftInKeg:0
-     //decrease:true
-     //increase: true
     };
   }
  //show page and able to go backwards
@@ -72,109 +69,30 @@ class KegControl extends React.Component {
     });
   }
 
-
-// handlingDecreasingPintsClick = () => {
-//   this.setState({
-//     decrease :true
-//   }); 
-// } 
-// handleDecreasingPints=(pintToEdit)=>{
-//   const editedMainKegList = this.state.mainKegList.filter(keg => keg.id !== this.state.selectedKeg.id).concat(pintToEdit);
-//   if(pintToEdit.amountLeftInKeg===0){
-//     this.setState({
-//       mainKegList: editedMainKegList,
-//       editing:false, 
-//       selectedKeg: null});
-//     }
-//     pintToEdit.amountLeftInKeg -- ; 
-//     this.setState({
-//     mainKegList: editedMainKegList,
-//     editing:false, 
-//     selectedKeg: null
-//   });
-//}
-
-
-
-
-//Details/Selling Pints
-  // handleDecreasingPints = (id) => {
-  //   const selectedKeg = this.state.mainKegList.filter(keg => keg.id === id)[0] 
-  //     const amountAvailable=selectedKeg.amountLeftInKeg;
-  //      if (amountAvailable ===0){ 
-  //           this.setState({
-  //             amountAvailable: 0 
-  //           }); 
-  //         }else { 
-  //           this.setState ({
-  //             amountAvailable: selectedKeg.amountLeftInKeg -1
-  //           });
-  //         }
-  //       }
-
-  // handleDecreasingPints = (id) => {
-   // const amountAvailable=selectedKeg.amountLeftInKeg-1;
-  //     //have to put into a the array 
-  //      const newMainKegList = this.state.mainKegList.filter(keg => keg.id !==this.state.selectedKeg.id).concat(selectedKeg);
-  //      console.log(newMainKegList); 
-  //      this.setState
-  //      ({
-  //        mainKegList: newMainKegList,
-  //        amountLeftInKeg : selectedKeg.amountLeftInKeg-1,
-  //        editing: true, 
-  //        selectedKeg: selectedKeg
-  //       });
-  //   }
-  // }
-
-
-  // handleDecreasingPints =(id)=> { 
-  //   const selectedKeg=this.state.mainKegList.filter(keg => keg.id === id)[0]
-  //   // const amountAvailable =selectedKeg.amountLeftInKeg -1; 
-  //   console.log(selectedKeg);
-
-  //   this.setState (prevState=> ({ 
-  //       selectedKeg: { 
-  //       ...prevState.selectedKeg, 
-  //       amountLeftInKeg: selectedKeg.amountLeftInKeg-1
-  //     }
-  //   }))
-  //   console.log(selectedKeg);
-  //   console.log(selectedKeg.amountLeftInKeg);
-  // }
-  
-  // handleDecreasingPints =(id)=> { 
-  //   const selectedKeg=this.state.mainKegList.filter(keg => keg.id === id)[0] 
-  //   this.setState (prevState=> ({ 
-  //     mainKegList: prevState.mainKegList.map(
-  //       el=>el.key===key? {...el, amountLeftInKeg: amountLeftInKeg-1}: el
-  //     )
-  //   }))
-  // }
-
-
-// this.setStatet({...this.state.selectedKeg, amountLeftInKeg: amountAvailable}
-
 // // Descreasing Pints
 handleDecreasingPints = (id) => {
   const selectedKeg = this.state.mainKegList.filter(keg => keg.id === id)[0]
     if (selectedKeg.amountLeftInKeg >0) {
       selectedKeg.amountLeftInKeg--;
-      console.log (selectedKeg.amountLeftInKeg);
       const newMainKegList = this.state.mainKegList.filter(keg => keg.id !==id).concat(selectedKeg);
       this.setState({
         mainKegList:newMainKegList
       });
     }else if (selectedKeg.amountLeftInKeg ===0 && selectedKeg.amountOfKeg >0) {
       selectedKeg.amountLeftInKeg =(124 *((selectedKeg.amountOfKeg-1)));
-      selectedKeg.amountOfKeg --; 
-      console.log(selectedKeg.amountOfKeg); 
+      selectedKeg.amountOfKeg --;
       selectedKeg.amountLeftKeg --; 
-      console.log(selectedKeg.amountLeftInKeg);
       const newMainKegList = this.state.mainKegList.filter(keg => keg.id !==id).concat(selectedKeg);
       this.setState({
         mainKegList: newMainKegList
       }); 
+    }else if (selectedKeg.amountOfKeg ===1 && selectedKeg.amountLeftInKeg ===0){ 
+      selectedKeg.amountLeftInKeg=124;
+      selectedKeg.amounLeftInKeg--; 
+      const newMainKegList = this.state.mainKegList.filter(keg => keg.id !==id).concat(selectedKeg);
+      this.setState({
+        mainKegList: newMainKegList
+      });
     }
   }
 //Increasing Kegs
