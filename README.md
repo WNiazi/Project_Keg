@@ -32,7 +32,7 @@ Build a tap room in React the store can track their kegs. Provide CRUD functiona
 
 ## Website Components Planning
 
-<img src="./img/flow_Chart.jpg">
+<img src="./img/flow_chart.jpg">
 
 ## Technologies Used <a id="technologies"></a>
 
@@ -49,7 +49,7 @@ Build a tap room in React the store can track their kegs. Provide CRUD functiona
 - Put `git clone https://github.com/wajmaniazi/Project_Keg.git` in terminal.
 - Run `cd Project_Keg` to navigate into new project directory.
 - Open the cloned repo in a text editor of your choice.
-- If you don't have Bootstrap for react, please install using npm install react-bootstrap bootstrap.
+- If you don't have Bootstrap for react, please install using `npm install react-bootstrap bootstrap`.
 - Run `npm install` to download all dependencies.
 - Run `npm run start` to start a live server.
 
