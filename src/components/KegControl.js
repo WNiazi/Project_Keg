@@ -99,8 +99,7 @@ class KegControl extends React.Component {
 
 //Details/Selling Pints
   // handleDecreasingPints = (id) => {
-  //   const selectedKeg = this.state.mainKegList.filter(keg => keg.id === id)[0]
-  //   { 
+  //   const selectedKeg = this.state.mainKegList.filter(keg => keg.id === id)[0] 
   //     const amountAvailable=selectedKeg.amountLeftInKeg;
   //      if (amountAvailable ===0){ 
   //           this.setState({
@@ -161,20 +160,29 @@ handleDecreasingPints = (id) => {
   const selectedKeg = this.state.mainKegList.filter(keg => keg.id === id)[0]
     if (selectedKeg.amountLeftInKeg >0) {
       selectedKeg.amountLeftInKeg--;
+      console.log (selectedKeg.amountLeftInKeg);
       const newMainKegList = this.state.mainKegList.filter(keg => keg.id !==id).concat(selectedKeg);
-      this.setState
-      ({
+      this.setState({
         mainKegList:newMainKegList
       });
+    }else if (selectedKeg.amountLeftInKeg ===0 && selectedKeg.amountOfKeg >0) {
+      selectedKeg.amountLeftInKeg =(124 *((selectedKeg.amountOfKeg-1)));
+      selectedKeg.amountOfKeg --; 
+      console.log(selectedKeg.amountOfKeg); 
+      selectedKeg.amountLeftKeg --; 
+      console.log(selectedKeg.amountLeftInKeg);
+      const newMainKegList = this.state.mainKegList.filter(keg => keg.id !==id).concat(selectedKeg);
+      this.setState({
+        mainKegList: newMainKegList
+      }); 
+    }
   }
-}
 //Increasing Kegs
 handleIncreasingKegs = (id) => { 
   const selectedKeg = this.state.mainKegList.filter(keg => keg.id === id)[0]  
   selectedKeg.amountOfKeg++;
     const newMainKegList = this.state.mainKegList.filter(keg => keg.id !==id).concat(selectedKeg);
-    this.setState
-    ({
+    this.setState({
       mainKegList:newMainKegList
      }); 
 }
@@ -185,12 +193,12 @@ handleIncreasingKegs = (id) => {
     let buttonText = null;
 
     if (this.state.editing) {
-      currentlyVisibleState = <EditKegForm keg = {this.state.selectedKeg} onEditKeg = {this.handleEditingKegInList}/>
+      currentlyVisibleState = <EditKegForm keg = {this.state.selectedKeg} 
+       onEditKeg = {this.handleEditingKegInList}/>
       buttonText = "Return to Keg List";
 
     } else if(this.state.selectedKeg != null) {
-      currentlyVisibleState = <KegDetail 
-        keg={this.state.selectedKeg}
+      currentlyVisibleState = <KegDetail keg={this.state.selectedKeg}
         onClickingDecreasingPints={this.handleDecreasingPints}
         onClickingIncreasingKegs={this.handleIncreasingKegs}
         onClickingDelete={this.handleDeletingKeg}
@@ -198,11 +206,13 @@ handleIncreasingKegs = (id) => {
         buttonText= "Return to Keg List";
 
     } else if (this.state.formVisibleOnPage) {
-      currentlyVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList}/>
+      currentlyVisibleState = <NewKegForm 
+      onNewKegCreation={this.handleAddingNewKegToList}/>
       buttonText = "Return to Keg List";
 
     } else {
-      currentlyVisibleState = <KegList kegList={this.state.mainKegList} onKegSelection = {this.handleChangingSelectedKeg}/>
+      currentlyVisibleState = <KegList kegList={this.state.mainKegList} 
+      onKegSelection = {this.handleChangingSelectedKeg}/>
       buttonText = "Add a Keg";
     }
 

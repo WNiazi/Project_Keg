@@ -10,6 +10,7 @@ function KegList(props) {
             <Keg
               whenKegClicked = {props.onKegSelection}
               brand={keg.brand}
+              name={keg.name}
               alcoholContent={keg.alcoholContent}
               priceOfKeg={keg.priceOfKeg}
               amountLeftInKeg={keg.amountLeftInKeg}

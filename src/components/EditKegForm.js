@@ -32,4 +32,4 @@ EditKegForm.propTypes = {
   onEditKeg: PropTypes.func
 }
 
-export default EditKegForm
+export default EditKegForm;

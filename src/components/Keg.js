@@ -3,12 +3,11 @@ import PropTypes from 'prop-types'
 
 
 function Keg(props) {
-  // const stockCheck = props.pints === 0 ? "Out of Stock" : props.pints;
-  
   return (
     <React.Fragment>
       <div onClick= {() => props.whenKegClicked(props.id)}>
-        <h3>{props.brand} -{props.name}</h3>
+        <h3>Brewery: {props.brand} </h3>
+        <h3> Name: {props.name}</h3>
         <p>Alcohol Content:{props.alcoholContent}% </p>
         <p>Price per Keg: ${props.priceOfKeg} </p>
         <p>Amount of Kegs: {props.amountOfKeg}</p>

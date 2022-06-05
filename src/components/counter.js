@@ -7,7 +7,8 @@
 //   setCount(amountLeftInKeg => amountLeftInKeg - 1);
 //  };
 //   return (
-//     <div> <h1 className={amountLeftInKeg > 0 ? "positive" : amountLeftInKeg < 0 ? "negative" : null}>{amountLeftInKeg}</h1>
+//     <div> 
+  //        <h1 className={amountLeftInKeg > 0 ? "positive" : amountLeftInKeg < 0 ? "negative" : null}>{amountLeftInKeg}</h1>
 //       <div>
 //         <button onClick={handleDecrement}>Sell a Pint</button>
 //         <h5>Count is {amountLeftInKeg}</h5>
